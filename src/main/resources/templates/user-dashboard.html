@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Deneme</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FDEDEC;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-size: 24px;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FFC0CB;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="search"] {
+            padding: 8px;
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"],
+        button[type="submit"] {
+            width: 100%;
+            background-color: #FFC0CB;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        button[type="submit"]:hover {
+            background-color: #FF1493;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .logout-btn {
+            display: inline-block;
+            background-color: #dc3545;
+            margin-top: 20px;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+
+    <h2>Product List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="products : ${products}">
+            <td th:text="${products.id}"></td>
+                <td th:text="${products.name}"></td>
+                <td th:text="${products.price}"></td>
+                <td th:text="${products.category}"></td>
+                <td th:text="${products.quantity}"></td>
+                <td>
+                 <div>
+
+</table>
+    <form action="/logout" method="post" class="logout-btn">
+        <button type="submit">Logout</button>
+         
+    </form>
+</body>
+</html>
